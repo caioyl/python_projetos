@@ -10,13 +10,13 @@ import os
 import xmltodict
 import pandas as pd
 
-lista_arquivos = os.listdir('https://github.com/caioyl/python_projetos/blob/1893e29665244b4122c05d23ee08c6f7da6e9cba/conversor_nf_para_csv/nfs')
+lista_arquivos = os.listdir('https://github.com/caioyl/python_projetos/tree/main/conversor_nf_para_csv/nfs')
 colunas = ['numero_nota','empresa_emissora','nome_cliente','bairro','rua','numero','complemento','peso']
 valores = []
 
 
 def pegar_infos(nome_arquivo, valores):
-  with open(f'https://github.com/caioyl/python_projetos/blob/1893e29665244b4122c05d23ee08c6f7da6e9cba/conversor_nf_para_csv/nfs/{nome_arquivo}','rb') as arquivo_xml:
+  with open(f'https://github.com/caioyl/python_projetos/tree/main/conversor_nf_para_csv/nfs/{nome_arquivo}','rb') as arquivo_xml:
     dic_arquivo = xmltodict.parse(arquivo_xml)
     if 'NFe' in dic_arquivo:
       infos_nf = dic_arquivo['NFe']['infNFe']
