@@ -32,11 +32,11 @@ for elem in tree.iter():
 csv_filename = 'coordenadas.csv'
 with open(csv_filename, 'w', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Longitude', 'Latitude'])
+    csv_writer.writerow(['Latitude', 'Longitude'])
 
     for coord in coordinates:
         lng, lat, _ = coord.split(',')
-        csv_writer.writerow([float(lng), float(lat)])
+        csv_writer.writerow([float(lat), float(lng)])
 
 print('Coordenadas extraídas e salvas em', csv_filename)
 
