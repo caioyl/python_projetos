@@ -12,8 +12,8 @@ kmz_filename = "C:\estacaometro.kmz"
 # Extraindo o conteúdo do arquivo KMZ
 with zipfile.ZipFile(kmz_filename, 'r') as kmz:
     # Procurar pelo arquivo KML dentro do KMZ
-    # Adiciona o KML na variável kml_filename caso o elemento iterado
-    # na lista do kmz tenha como extensão "kml" (só tem um elemento)
+    # Adiciona o KML na variável kml_filename caso o elemento iterado na lista do kmz
+    # tenha como extensão "kml" (só tem um elemento)
     kml_filename = [name for name in kmz.namelist() if name.lower().endswith('.kml')][0]
     # Ler o conteúdo do arquivo KML
     with kmz.open(kml_filename) as kml_file:
@@ -60,4 +60,4 @@ df = pd.concat([estacoes, coordenadas],axis=1)
 # Conversão para csv
 df.to_csv('estacoes_metro_coordenadasUTM.csv',index=False)
 
-df
+print(df)
